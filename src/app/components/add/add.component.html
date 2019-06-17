@@ -1,0 +1,87 @@
+<div class="card textcenter my-3">
+
+  <div class="apt-addheading card-header bg-primary text-white" >
+    <fa-icon  icon="plus"></fa-icon>  Add Appointment
+  </div><!-- card-header -->
+
+  <div class="card-body">
+
+    <form id="aptForm" novalidate
+    (ngSubmit)="addAppointment(aptForm.value)"
+    #aptForm="ngForm"
+    >
+      <div class="form-row">
+      <div class="form-group col-md-12 ">
+        <label class=" col-form-label text-md-right" for="clientName">Name</label>
+
+          <input type="text" class="form-control" name="clientName" id="clientName" placeholder="Name" ngModel>
+
+      </div><!-- form-group -->
+      </div>
+
+      <div class="form-group   ">
+        <label class="  col-form-label text-md-right"
+               for="ownerName">Email</label>
+        <div class=" ">
+          <input type="text" class="form-control" name="email"
+                 id="ownerName" placeholder="Email" ngModel>
+        </div><!-- col-md-10 -->
+      </div><!-- form-group -->
+
+      <div class="form-row">
+      <div class="form-group  col-md-6  ">
+
+        <label class=" col-form-label text-md-right"
+               for="ownerName">Age</label>
+
+          <input type="text" class="form-control" name="age"
+                 id="age" placeholder="Age" ngModel>
+
+      </div>
+
+        <div class="form-group  col-md-6 ">
+        <label class="  col-form-label text-md-right" for="gender">Gender</label>
+        <select name="gender"  class="form-control" id="gender" ngModel>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div><!-- form-group -->
+    </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class=" col-form-label text-md-right" for="aptDate">Date</label>
+        <div class="  input-group">
+          <input  class="form-control" id="aptDate" name="aptDate"  ngbDatepicker #d="ngbDatepicker" ngModel>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"> <fa-icon  icon="calendar-plus"></fa-icon></button>
+          </div>
+        </div><!-- col-md-4 -->
+
+      </div>
+        <div class="form-group col-md-6">
+        <label class="  col-form-label text-md-right" for="aptTime">Time</label>
+
+        <input type="time" class="form-control" name="aptTime" id="aptTime" ngModel>
+
+      </div><!-- form-group -->
+      </div>
+
+      <div class="form-group">
+        <label class=" text-md-right" for="aptNotes">Notes</label>
+        <div class=" ">
+          <textarea class="form-control" rows="4" cols="50"
+                    name="aptNotes" id="aptNotes" placeholder="Appointment Notes" ngModel> </textarea>
+        </div><!-- col-md-10 -->
+      </div><!-- form-group -->
+
+
+
+      <div class="form-group form-row mb-0">
+        <div class="offset-md-2 col-md-10">
+          <button type="submit" class="btn btn-primary d-block ml-auto">  Add Appointment</button>
+        </div><!-- col-md-offset-2 -->
+      </div><!-- form-group -->
+
+    </form>
+  </div><!-- card-body -->
+</div><!-- card-primary -->

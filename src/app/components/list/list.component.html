@@ -1,0 +1,41 @@
+<div class="appointment-list item-list mb-3">
+  <div class="spinner" *ngIf="showSpinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+  <div *ngIf ="hasAppointments; else notShow">
+  <div #listEL class="appointment-item col media py-3 border-bottom" [attr.data-list-id]="item.id"
+  *ngFor="let item of appointments2 "  >
+
+
+
+    <div class="app-info media-body">
+      <div class="app-head d-flex">
+        <h2 class="app-name"  ><a class="" routerLink="/detail/{{item.id}}">{{item.name}}</a></h2>
+        <span class="apt-date ml-auto">{{item.appointmentDate.seconds * 1000 | date:'d MMMM yyyy' }}</span>
+      </div><!-- app-head -->
+
+      <div class="client-name">
+        <span class="label-item"> </span>
+        <span >{{item.age}} years old</span>
+      </div>
+
+    </div><!-- app-info -->
+
+    <div class="ml-3">
+      <button class="app-delete btn btn-sm btn-danger"
+              (click)="handleDelete(listEL)">
+        <fa-icon  icon="times"></fa-icon>
+      </button>
+    </div><!-- media-right -->
+
+  </div><!-- app-item -->
+  </div>
+  <ng-template #notShow>
+    <div class="text-center bg-light p-5">
+      <fa-icon icon="mug-hot"></fa-icon>
+      You have time for coffee.
+    </div>
+  </ng-template>
+</div><!-- appointment-list -->
