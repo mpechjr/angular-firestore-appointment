@@ -31,7 +31,7 @@ export const environment = {
 ``` 
 3. Download the repo
 ```
-git clone https://github.com/mpechjr/angular-firebase-appointment
+git clone https://github.com/mpechjr/angular-firestore-appointment
 ```
 4. Install packages and start the app. 
 ```
